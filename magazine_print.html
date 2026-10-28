@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>نشریه حاشیه‌ساز - پیش‌شماره ۱</title>
+<style>
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('assets/fonts/Vazirmatn-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('assets/fonts/Vazirmatn-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('assets/fonts/Vazirmatn-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('assets/fonts/Vazirmatn-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('assets/fonts/Vazirmatn-Black.ttf') format('truetype');
+  font-weight: 900;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0 !important;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+body {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0d0e12;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  direction: rtl;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  margin: 0 auto;
+}
+
+/* ========================================================
+   PAGE 1: FRONT COVER (جلد رو)
+   ======================================================== */
+.cover-front {
+  background: #08080a;
+  color: #ffffff;
+  padding: 14mm 16mm 12mm 16mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover-meta-strip {
+  border-bottom: 2px solid #e03131;
+  padding-bottom: 3mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8.5pt;
+  font-weight: 600;
+  color: #c1c2c5;
+}
+
+.cover-meta-strip .tag {
+  background: #e03131;
+  color: #ffffff;
+  padding: 1mm 3mm;
+  font-size: 7.5pt;
+  font-weight: 700;
+  border-radius: 2px;
+}
+
+.cover-masthead {
+  margin-top: 4mm;
+}
+
+.cover-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cover-title {
+  font-size: 60pt;
+  font-weight: 900;
+  color: #f8f9fa;
+  line-height: 0.95;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.8);
+}
+
+.cover-title span.red {
+  color: #e03131;
+}
+
+.cover-subtitle {
+  margin-top: 3mm;
+  font-size: 10pt;
+  font-weight: 600;
+  color: #adb5bd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #2c2e33;
+  border-bottom: 1px solid #2c2e33;
+  padding: 2mm 0;
+}
+
+.cover-centerpiece {
+  position: relative;
+  width: 100%;
+  height: 94mm;
+  margin: 4mm 0;
+  border: 1px solid #25262b;
+  background: radial-gradient(circle at 50% 40%, #1c1417 0%, #08080a 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cover-centerpiece svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cover-headlines {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 5mm;
+  margin-top: 1mm;
+}
+
+.main-story {
+  background: rgba(224, 49, 49, 0.08);
+  border-right: 4px solid #e03131;
+  padding: 3mm 4mm;
+}
+
+.main-story .kicker {
+  color: #ff6b6b;
+  font-size: 8pt;
+  font-weight: 700;
+  margin-bottom: 1.5mm;
+}
+
+.main-story h1 {
+  font-size: 15.5pt;
+  font-weight: 900;
+  line-height: 1.35;
+  color: #ffffff;
+  margin-bottom: 2mm;
+}
+
+.main-story p {
+  font-size: 8.5pt;
+  line-height: 1.6;
+  color: #ced4da;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.side-stories {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.story-item {
+  border-bottom: 1px solid #212529;
+  padding-bottom: 2mm;
+  margin-bottom: 2mm;
+}
+
+.story-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.story-item .badge {
+  color: #fa5252;
+  font-size: 7pt;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 0.8mm;
+}
+
+.story-item h3 {
+  font-size: 9pt;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #f1f3f5;
+}
+
+.cover-footer {
+  border-top: 1px solid #2c2e33;
+  padding-top: 3mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8pt;
+  color: #868e96;
+}
+
+.cover-footer .barcode {
+  font-family: monospace;
+  letter-spacing: 2px !important;
+  color: #adb5bd;
+}
+
+/* ========================================================
+   PAGE 2: EDITORIAL & COLOPHON (شناسنامه و سخن سردبیر)
+   ======================================================== */
+.page-editorial {
+  padding: 14mm 16mm;
+  color: #212529;
+}
+
+.running-header {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2mm;
+  margin-bottom: 6mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8pt;
+  font-weight: 700;
+  color: #495057;
+}
+
+.editorial-layout {
+  display: grid;
+  grid-template-columns: 50mm 1fr;
+  gap: 8mm;
+  height: 246mm;
+}
+
+.colophon-box {
+  border-left: 1px solid #dee2e6;
+  padding-left: 6mm;
+  font-size: 8pt;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.colophon-title {
+  font-size: 13pt;
+  font-weight: 900;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 2mm;
+  margin-bottom: 3.5mm;
+}
+
+.colophon-row {
+  margin-bottom: 2.2mm;
+}
+
+.colophon-row .label {
+  font-weight: 700;
+  color: #111111;
+  display: block;
+}
+
+.colophon-row .val {
+  color: #495057;
+  font-weight: 500;
+}
+
+.colophon-legal {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  padding: 3mm;
+  font-size: 7pt;
+  line-height: 1.55;
+  color: #6c757d;
+  text-align: justify;
+  margin-top: 3mm;
+}
+
+.editorial-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.editorial-rubric {
+  color: #e03131;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 2mm;
+}
+
+.editorial-headline {
+  font-size: 22pt;
+  font-weight: 900;
+  line-height: 1.25;
+  color: #000000;
+  margin-bottom: 3.5mm;
+}
+
+.editorial-lead {
+  font-size: 10.5pt;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #343a40;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 3.5mm;
+  margin-bottom: 4mm;
+  text-align: justify;
+}
+
+.editorial-columns {
+  column-count: 2;
+  column-gap: 7mm;
+  column-rule: 1px solid #e9ecef;
+  font-size: 8.8pt;
+  line-height: 1.8;
+  text-align: justify;
+  color: #2b2d42;
+  font-weight: 400;
+}
+
+.editorial-columns p {
+  margin-bottom: 3mm;
+  text-indent: 4mm;
+}
+
+.editorial-columns p:first-child {
+  text-indent: 0;
+}
+
+.editorial-signoff {
+  margin-top: 5mm;
+  padding-top: 3.5mm;
+  border-top: 1px dashed #ced4da;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editorial-signoff .name {
+  font-weight: 800;
+  font-size: 10pt;
+  color: #000000;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 8mm;
+  left: 16mm;
+  right: 16mm;
+  border-top: 1px solid #000000;
+  padding-top: 2mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8pt;
+  font-weight: 700;
+  color: #495057;
+}
+
+/* ========================================================
+   PAGE 3: SPECIAL REPORT (گزارش ویژه سه ستونه)
+   ======================================================== */
+.page-report {
+  padding: 14mm 16mm;
+  color: #111111;
+}
+
+.report-header-badge {
+  display: inline-block;
+  background: #000000;
+  color: #ffffff;
+  padding: 1mm 3mm;
+  font-size: 8pt;
+  font-weight: 700;
+  margin-bottom: 2.5mm;
+}
+
+.report-title {
+  font-size: 22pt;
+  font-weight: 900;
+  line-height: 1.25;
+  color: #000000;
+  margin-bottom: 2.5mm;
+}
+
+.report-lead {
+  font-size: 10pt;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #495057;
+  border-right: 3px solid #e03131;
+  padding-right: 3.5mm;
+  margin-bottom: 5mm;
+  text-align: justify;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5.5mm;
+  font-size: 8.6pt;
+  line-height: 1.75;
+  text-align: justify;
+  color: #212529;
+}
+
+.report-col p {
+  margin-bottom: 2.5mm;
+  text-indent: 3mm;
+}
+
+.report-col p:first-child {
+  text-indent: 0;
+}
+
+.subhead {
+  font-size: 10.5pt;
+  font-weight: 800;
+  color: #000000;
+  margin: 3.5mm 0 2mm 0;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 1mm;
+}
+
+.dark-stats-box {
+  background: #0f1115;
+  color: #ffffff;
+  padding: 3.5mm 3.5mm;
+  margin: 3.5mm 0;
+  border-radius: 2px;
+}
+
+.dark-stats-box .stat-num {
+  font-size: 22pt;
+  font-weight: 900;
+  color: #ff6b6b;
+  line-height: 1;
+}
+
+.dark-stats-box .stat-label {
+  font-size: 7.8pt;
+  font-weight: 600;
+  color: #e9ecef;
+  margin-top: 1mm;
+  line-height: 1.4;
+}
+
+.pull-quote {
+  border-top: 2px solid #e03131;
+  border-bottom: 2px solid #e03131;
+  padding: 3.5mm 2mm;
+  margin: 4mm 0;
+  font-size: 9.8pt;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: center;
+  color: #000000;
+}
+
+/* ========================================================
+   PAGE 4: BACK COVER (جلد پشت)
+   ======================================================== */
+.cover-back {
+  background: #08080a;
+  color: #ffffff;
+  padding: 16mm 18mm 14mm 18mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.back-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #212529;
+  padding-bottom: 3.5mm;
+  font-size: 8.5pt;
+  color: #868e96;
+}
+
+.back-center-manifesto {
+  text-align: center;
+  max-width: 145mm;
+  margin: 0 auto;
+}
+
+.back-quote-mark {
+  font-size: 36pt;
+  color: #e03131;
+  line-height: 0.5;
+  margin-bottom: 4mm;
+}
+
+.back-manifesto-text {
+  font-size: 18pt;
+  font-weight: 800;
+  line-height: 1.65;
+  color: #f8f9fa;
+  margin-bottom: 5mm;
+}
+
+.back-manifesto-sub {
+  font-size: 9pt;
+  line-height: 1.8;
+  color: #adb5bd;
+  text-align: justify;
+}
+
+.whistleblower-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #2c2e33;
+  border-radius: 4px;
+  padding: 4mm 5mm;
+  margin-top: 6mm;
+  text-align: right;
+}
+
+.whistleblower-title {
+  color: #ff6b6b;
+  font-size: 10pt;
+  font-weight: 800;
+  margin-bottom: 1.5mm;
+}
+
+.whistleblower-text {
+  font-size: 8.2pt;
+  line-height: 1.65;
+  color: #ced4da;
+}
+
+.back-footer-box {
+  border-top: 2px solid #212529;
+  padding-top: 5mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.back-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5mm;
+}
+
+.back-brand .logo-text {
+  font-size: 20pt;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.back-brand .logo-text span {
+  color: #e03131;
+}
+
+.back-brand .edition {
+  font-size: 8pt;
+  color: #868e96;
+}
+</style>
+</head>
+<body>
+
+<!-- ==========================================
+     صفحه ۱: جلد رو (Front Cover)
+     ========================================== -->
+<div class="page cover-front" id="page-1">
+  <div class="cover-meta-strip">
+    <div style="display: flex; gap: 3mm; align-items: center;">
+      <span class="tag">پیش‌شماره ۰۱</span>
+      <span>گاهنامه افشاگری، تحلیل پشت‌پرده‌ها و بحران‌های پلتفرمی</span>
+    </div>
+    <div style="display: flex; gap: 4mm;">
+      <span>آبان ۱۴۰۵</span>
+      <span>۴ صفحه فشرده</span>
+      <span style="color: #ff6b6b; font-weight: 800;">نسخه دیجیتال آزاد</span>
+    </div>
+  </div>
+
+  <div class="cover-masthead">
+    <div class="cover-title-row">
+      <div class="cover-title">حاشیه<span class="red">‌ساز</span></div>
+      <div style="text-align: left; font-family: monospace; font-size: 8.5pt; color: #868e96; line-height: 1.3;">
+        <div>VOL. 01 // ISSUE 01</div>
+        <div>DISTRIBUTION: FREE WEB</div>
+      </div>
+    </div>
+    <div class="cover-subtitle">
+      <span>هفته‌نامه رصد شبکه‌های اجتماعی، بحران پلتفرم‌ها و صدای کاربران</span>
+      <span style="font-size: 8.5pt; color: #ff6b6b; font-weight: 700;">دوره اول</span>
+    </div>
+  </div>
+
+  <div class="cover-centerpiece">
+    <!-- وکتور بروتالیست پایش و شفاف‌سازی -->
+    <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="scanGlow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#e03131" stop-opacity="0.7"/>
+          <stop offset="70%" stop-color="#721c24" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#08080a" stop-opacity="0"/>
+        </linearGradient>
+        <pattern id="radarGrid" width="25" height="25" patternUnits="userSpaceOnUse">
+          <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#25262b" stroke-width="0.7"/>
+        </pattern>
+      </defs>
+      <rect width="600" height="300" fill="url(#radarGrid)"/>
+      <circle cx="300" cy="150" r="120" fill="url(#scanGlow)"/>
+      <circle cx="300" cy="150" r="100" fill="none" stroke="#e03131" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
+      <circle cx="300" cy="150" r="60" fill="none" stroke="#e03131" stroke-width="1.2" opacity="0.8"/>
+      <circle cx="300" cy="150" r="20" fill="#e03131" opacity="0.9"/>
+      <line x1="120" y1="150" x2="480" y2="150" stroke="#e03131" stroke-width="1" opacity="0.4"/>
+      <line x1="300" y1="30" x2="300" y2="270" stroke="#e03131" stroke-width="1" opacity="0.4"/>
+      <!-- امواج داده و نمودار تراز منفی -->
+      <path d="M 0 210 Q 150 180, 260 210 T 450 190 T 600 230 L 600 300 L 0 300 Z" fill="#121316" stroke="#e03131" stroke-width="1.5"/>
+      <path d="M 0 240 Q 180 220, 320 250 T 600 235 L 600 300 L 0 300 Z" fill="#0b0b0e" stroke="#495057" stroke-width="1"/>
+      <!-- برچسب‌های پایش -->
+      <text x="315" y="145" font-family="monospace" font-size="10" fill="#ffffff" font-weight="bold">TARGET: JABAMA_3324397</text>
+      <text x="315" y="165" font-family="monospace" font-size="9" fill="#ff6b6b">PENALTY: 89% DEDUCTED</text>
+    </svg>
+  </div>
+
+  <div class="cover-headlines">
+    <div class="main-story">
+      <div class="kicker">پرونده ویژه شماره اول • مستندات رزرو ۳۳۲۴۳۹۷</div>
+      <h1>تله کنسلی جاباما؛ وقتی میزبان غیب می‌شود و مسافر بدهکار دیجی‌پی!</h1>
+      <p>روایتی مستند از کسر ۸۹ درصدی وجه بدون ارائه حتی یک ثانیه خدمت اقامتی. میزبان پاسخ نمی‌دهد، پشتیبانی سکوت می‌کند، و مسافر می‌ماند و اقساط وام خریدی که هرگز خدمتی بابت آن دریافت نکرد.</p>
+    </div>
+    <div class="side-stories">
+      <div class="story-item">
+        <span class="badge">رسوایی رویدادی</span>
+        <h3>یکتانت و مسابقه رمزالمثل؛ حل کامل معماها و دود شدن جوایز نقدی</h3>
+      </div>
+      <div class="story-item">
+        <span class="badge">افتضاح امنیتی</span>
+        <h3>bluCTF بلوبانک؛ سرورهای قطع و برخورد زننده روابط عمومی با نخبگان</h3>
+      </div>
+      <div class="story-item">
+        <span class="badge">بحران طلا و فین‌تک</span>
+        <h3>میلی‌گلد و طلای کاغذی؛ معمای ۹۶۵ کیلو شمش در بانک کارگشایی</h3>
+      </div>
+      <div class="story-item">
+        <span class="badge">توقیف در نطفه</span>
+        <h3>برنامه گنگ علی ضیا؛ شکست پروژه سفیدشویی رپ زیر تیغ ساترا</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="barcode">|||| | ||| ||||| || |||| ||| ||||</div>
+    <div>صدای اعتراض شما حاشیه نیست؛ اصل ماجراست</div>
+    <div>ارسال اسناد تخلفات: @HashiyehsazBot</div>
+  </div>
+</div>
+
+<!-- ==========================================
+     صفحه ۲: شناسنامه و سرمقاله (Colophon & Editorial)
+     ========================================== -->
+<div class="page page-editorial" id="page-2">
+  <div class="running-header">
+    <span>نشریه حاشیه‌ساز</span>
+    <span>شناسنامه و سخن نخست</span>
+    <span>آبان ۱۴۰۵ • پیش‌شماره اول</span>
+  </div>
+
+  <div class="editorial-layout">
+    <div class="colophon-box">
+      <div>
+        <div class="colophon-title">شناسنامه نشریه</div>
+        
+        <div class="colophon-row">
+          <span class="label">صاحب امتیاز و ناشر</span>
+          <span class="val">تحریریه مستقل حاشیه‌ساز</span>
+        </div>
+        <div class="colophon-row">
+          <span class="label">سردبیر ارشد</span>
+          <span class="val">ریک سانچز</span>
+        </div>
+        <div class="colophon-row">
+          <span class="label">پایشگر داده و شبکه‌ها</span>
+          <span class="val">سیستم هوشمند رصد اسناد و افشاگری</span>
+        </div>
+        <div class="colophon-row">
+          <span class="label">طراحی و هویت بصری</span>
+          <span class="val">استودیو وایب‌فارسی</span>
+        </div>
+        <div class="colophon-row">
+          <span class="label">دوره انتشار</span>
+          <span class="val">هفته‌نامه دیجیتال (دوشنبه‌ها)</span>
+        </div>
+        <div class="colophon-row">
+          <span class="label">فرمت انتشار</span>
+          <span class="val">وب تعاملی و نسخه چاپی PDF</span>
+        </div>
+        <div class="colophon-row">
+          <span class="label">درگاه ارتباطی</span>
+          <span class="val">ربات و کانال تلگرام @HashiyehsazBot</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="colophon-legal">
+          این نشریه با تکیه بر اسناد میدانی، لاگ‌های ارتباطی کاربران و مشاهدات تخصصی تهیه شده است. هدف حاشیه‌ساز شکستن سکوت رسانه‌ای پیرامون حقوق مصرف‌کنندگان وب فارسی است. بازنشر تمامی محتواها با ذکر منبع آزاد است.
+        </div>
+      </div>
+    </div>
+
+    <div class="editorial-content">
+      <div class="editorial-rubric">سرمقاله سردبیر // NOTE FROM THE EDITOR</div>
+      <div class="editorial-headline">پایان مدارا با شوهای تبلیغاتی و بدعهدی‌های صنفی</div>
+      <div class="editorial-lead">
+        در روزگاری که بیلبوردهای بزرگراهی، رپورتاژهای سفارشی و هیاهوهای روابط عمومی حقیقت پلتفرم‌ها را لاپوشانی می‌کنند، حاشیه‌ساز متولد شد تا صدای کاربران بی‌پناه وب فارسی را روی کاغذ ثبت کند.
+      </div>
+
+      <div class="editorial-columns">
+        <p>
+          شرکت‌های اکوسیستم فناوری ایران سالانه صدها میلیارد تومان برای بزک کردن برند خود هزینه می‌کنند. شعارهای مشتری‌مداری، لبخندهای پشتیبانی و ادعای پیشگامی در فناوری تا زمانی برقرار است که تراکنش شما در درگاه پرداخت موفق باشد. به محض آنکه مشکلی پیش بیاید، میزبانی غیب شود یا جایزه‌ای باید پرداخت گردد، نقاب مدرنیته فرومی‌افتد.
+        </p>
+        <p>
+          در پرونده جاباما دیدیم که چگونه یک مسافر برای یک رزرو که میزبانش در دسترس نبوده و ثانیه‌ای خدمت دریافت نکرده، مشمول کسر ۱ میلیون و ۱۸۰ هزار تومان جریمه می‌شود و ماه‌ها باید قسط اعتباری دیجی‌پی را بپردازد. پشتیبانی که موقع دریافت کارمزد همه کاره است، ناگهان تبدیل به یک ناظر بی‌طرف و سلب مسئولیت شده می‌شود.
+        </p>
+        <p>
+          در حوزه رویدادها، شرکت‌هایی چون یکتانت مسابقه رمزالمثل برگزار می‌کنند و پس از حل کامل معماها توسط تیم‌ها، در پرداخت جوایز بهانه‌تراشی می‌کنند. بلوبانک در مسابقه bluCTF زیرساختی غیرپایدار تحویل می‌دهد و وقتی متخصصان انتقاد می‌کنند، مدیر روابط عمومی به جای شفاف‌سازی فنی با لحنی طلبکارانه برخورد می‌کند.
+        </p>
+        <p>
+          حاشیه‌ساز آمده است تا نشان دهد این‌ها حاشیه نیستند، بلکه اصل کارنامه عملکرد این شرکت‌ها هستند. ما هر دوشنبه این تناقض‌ها را با اسناد غیرقابل انکار ثبت و منتشر خواهیم کرد.
+        </p>
+      </div>
+
+      <div class="editorial-signoff">
+        <div>
+          <div class="name">ریک سانچز</div>
+          <div style="font-size: 8pt; color: #6c757d;">سردبیر نشریه دیجیتال حاشیه‌ساز</div>
+        </div>
+        <div style="font-size: 8.5pt; color: #adb5bd; font-family: monospace;">
+          TEHRAN // AUTUMN 1405
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>نشریه حاشیه‌ساز</span>
+    <span>شناسنامه و سرمقاله • صفحه ۲</span>
+    <span>آبان ۱۴۰۵</span>
+  </div>
+</div>
+
+<!-- ==========================================
+     صفحه ۳: گزارش تحلیلی سه ستونه (Special Report)
+     ========================================== -->
+<div class="page page-report" id="page-3">
+  <div class="running-header">
+    <span>گزارش ویژه پایش پلتفرم‌ها و رویدادها</span>
+    <span>دیده‌بان حقوق مصرف‌کنندگان دیجیتال</span>
+    <span>صفحه ۳</span>
+  </div>
+
+  <div>
+    <span class="report-header-badge">پرونده تخلفات مستند</span>
+    <h1 class="report-title">آناتومی خلف وعده در وب فارسی؛ از تله جاباما تا مسابقات بی‌جایزه</h1>
+    <div class="report-lead">
+      کالبدشکافی سه پرونده داغ: کسر ۸۹ درصدی هزینه سفر توسط جاباما بدون ارائه یک دقیقه خدمت، بدعهدی یکتانت در تسویه جوایز مسابقه رمزالمثل، و شکست زیرساختی bluCTF در کنار پاسخگویی معکوس روابط عمومی بلوبانک.
+    </div>
+  </div>
+
+  <div class="report-grid">
+    <!-- ستون اول: جاباما -->
+    <div class="report-col">
+      <div class="subhead">تله جاباما و بدهی دیجی‌پی</div>
+      <p>
+        در پرونده مستند رزرو کد ۳۳۲۴۳۹۷، مسافر اقدام به رزرو اقامتگاه کرده و رزرو تایید شد. پس از تایید، میزبان در چت، تلفن و پیامک کاملاً ناپدید شد و پشتیبانی جاباما نیز پاسخی نداد.
+      </p>
+
+      <div class="dark-stats-box">
+        <div class="stat-num">۸۹٪</div>
+        <div class="stat-label">کسر هزینه رزرو بابت عدم ارائه حتی یک دقیقه خدمت اقامتی</div>
+      </div>
+
+      <p>
+        مسافر برای بلاتکلیف نماندن ناچار به لغو رزرو شد. الگوریتم جاباما بیش از ۱ میلیون و ۱۸۰ هزار تومان کسر و تنها ۱۳۳ هزار تومان عودت داد؛ در حالی که پرداخت با اعتبار دیجی‌پی بوده و کاربر بدهکار اقساط شد.
+      </p>
+    </div>
+
+    <!-- ستون دوم: یکتانت -->
+    <div class="report-col">
+      <div class="subhead">یکتانت و معمای رمزالمثل</div>
+      <p>
+        مسابقه فنی رمزالمثل یکتانت با دعوت از نخبگان و جامعه توسعه‌دهندگان برگزار شد. صدها ساعت زمان و انرژی تیم‌ها صرف کشف الگوریتم‌ها و حل چالش‌های امنیتی شد.
+      </p>
+
+      <div class="pull-quote">
+        «وقتی نوبت جذب رزومه و شوی برند کارفرمایی است در صف اول‌اند، وقت پرداخت جوایز پاسخگویی صفر می‌شود.»
+      </div>
+
+      <p>
+        تیم‌ها تمام ۱۰ معما را حل کردند اما در ادامه با بهانه‌تراشی و تاخیرهای نامتعارف در تسویه جوایز وعده‌داده‌شده روبرو شدند؛ رفتاری که نشان از بی‌احترامی به وقت نخبگان دارد.
+      </p>
+    </div>
+
+    <!-- ستون سوم: بلوبانک -->
+    <div class="report-col">
+      <div class="subhead">bluCTF و روابط عمومی طلبکار</div>
+      <p>
+        مسابقه امنیت سایبری bluCTF که توسط بلوبانک سامان داده شد، به جای آنکه نمایش توان فنی نئوبانک باشد، به کابوس باگ‌های سروری و قطعی‌های طولانی تبدیل شد.
+      </p>
+
+      <div class="dark-stats-box">
+        <div class="stat-num">۰ پاسخ</div>
+        <div class="stat-label">پاسخگویی فنی روابط عمومی در برابر نقدهای مستند ریک سانچز و شرکت‌کنندگان</div>
+      </div>
+
+      <p>
+        وقتی شرکت‌کنندگان نسبت به ناپایداری زیرساخت و باگ‌های طراحی اعتراض کردند، مدیر روابط عمومی بلوبانک به جای عذرخواهی، برخوردی تند و طلبکارانه با متخصصان پیش گرفت.
+      </p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>نشریه حاشیه‌ساز</span>
+    <span>گزارش ویژه سه ستونه • صفحه ۳</span>
+    <span>آبان ۱۴۰۵</span>
+  </div>
+</div>
+
+<!-- ==========================================
+     صفحه ۴: جلد پشت (Back Cover)
+     ========================================== -->
+<div class="page cover-back" id="page-4">
+  <div class="back-top-meta">
+    <span>نشریه حاشیه‌ساز • دوره اول</span>
+    <span>پیش‌شماره ۰۱ • آبان ۱۴۰۵</span>
+    <span>نسخه آزاد وب</span>
+  </div>
+
+  <div class="back-center-manifesto">
+    <div class="back-quote-mark">“</div>
+    <div class="back-manifesto-text">
+      صدای اعتراض شما حاشیه نیست؛ اصل ماجراست.
+    </div>
+    <div class="back-manifesto-sub">
+      پلتفرم‌ها موقع دریافت کارمزد و کسر وجه، خود را همه‌کاره و مدیر مقتدر می‌دانند؛ اما در بزنگاه پاسخگویی و جبران خسارت، ناگهان به یک واسطه فنی سلب‌مسئولیت‌شده تبدیل می‌شوند. حاشیه‌ساز آینه بی‌روتوش این تناقض‌هاست تا هیچ تخلفی زیر سایه بودجه‌های تبلیغاتی فراموش نشود.
+    </div>
+
+    <div class="whistleblower-box">
+      <div class="whistleblower-title">سامانه شهروندی سوت‌زنی و افشاگری حاشیه‌ساز</div>
+      <div class="whistleblower-text">
+        آیا حقوق شما در پلتفرم‌های اینترنتی نقض شده است؟ آیا با بدعهدی شرکتی، تله‌های کنسلی یا عدم تسویه مواجه شده‌اید؟ مستندات، اسکرین‌شات‌ها و لاگ‌های خود را بدون واسطه برای تحریریه ارسال کنید تا در شماره‌های آینده به صورت مستند منتشر شود.
+        <br><br>
+        <strong>ربات اختصاصی تلگرام:</strong> @HashiyehsazBot
+        &nbsp;|&nbsp;
+        <strong>توییتر و وب:</strong> HashiyehSaz.github.io
+      </div>
+    </div>
+  </div>
+
+  <div class="back-footer-box">
+    <div class="back-brand">
+      <div class="logo-text">حاشیه<span>‌ساز</span></div>
+      <div class="edition">گاهنامه مستقل افشاگری و دیده‌بان پلتفرم‌های دیجیتال ایران</div>
+      <div style="font-size: 7.5pt; color: #495057; font-family: monospace;">HASHIYEHSAZ.GITHUB.IO // ISSUE 01</div>
+    </div>
+
+    <div style="text-align: left; font-family: monospace; font-size: 8pt; color: #868e96;">
+      <div>POWERED BY VIBEFARSI</div>
+      <div style="color: #ff6b6b; font-weight: bold;">FREE ACCESS • NO PAYWALL</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
